@@ -62,6 +62,17 @@ var customScripts = {
 			}
         });
 		
+		$(window).scroll(function () {
+			var scrollTop = $(window).scrollTop();
+			var homeHeight = $('#home').height();
+	
+			if (scrollTop >= homeHeight) {
+				$('.header').addClass('addBg');
+			} else {
+				$('.header').removeClass('addBg');
+			}
+		});
+		
 		$("a[href='#top']").click(function () {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 return false;
